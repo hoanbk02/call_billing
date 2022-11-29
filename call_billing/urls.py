@@ -14,8 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, reverse_lazy, include
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
+    path('', RedirectView.as_view(url=reverse_lazy('admin:index'), permanent=False), name='index'),
     path('admin/', admin.site.urls),
+    path('grappelli/', include('grappelli.urls')),
+    path('api/v1/', include('call_billing.urls_api_v1')),
 ]
