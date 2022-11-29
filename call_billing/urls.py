@@ -21,4 +21,5 @@ urlpatterns = [
     path('', RedirectView.as_view(url=reverse_lazy('admin:index'), permanent=False), name='index'),
     path('admin/', admin.site.urls),
     path('grappelli/', include('grappelli.urls')),
+    path('api/v1/', include('call_billing.urls_api_v1')),
 ]
