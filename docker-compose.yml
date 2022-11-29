@@ -13,10 +13,6 @@ services:
       - POSTGRES_PASSWORD=pguser
   app:
     build: .
-    command: >
-      bash -c "
-        python manage.py migrate
-        && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
@@ -27,3 +23,6 @@ services:
       - POSTGRES_PASSWORD=pguser
     depends_on:
       - db
+    working_dir: "/code"
+volumes:
+  db-data: {}
