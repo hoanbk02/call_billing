@@ -9,5 +9,5 @@ class UserSerializer(serializers.Serializer):
     def validate_user(self, value):
         user = UserRepository.get_by_username(username=value)
         if not user:
-            raise ValidationError({'username': 'username is invalid'})
+            raise ValidationError('username is invalid.')
         return user

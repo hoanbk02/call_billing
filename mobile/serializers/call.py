@@ -8,12 +8,12 @@ from mobile.constants import MILLISECOND_PER_BLOCK
 
 class CreateCallSerializerV1(serializers.Serializer):
     user = serializers.CharField(min_length=5, max_length=32)
-    call_duration = serializers.IntegerField(min_value=0)
+    call_duration = serializers.IntegerField(min_value=1)
 
     def validate_user(self, value):
         user = UserRepository.get_by_username(username=value)
         if not user:
-            raise ValidationError({'username': 'username is invalid'})
+            raise ValidationError('username is invalid.')
         return user
 
     def create(self, validated_data):
