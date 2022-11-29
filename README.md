@@ -7,6 +7,6 @@
 $ docker-compose build
 $ docker-compose up -d
 $ docker-compose exec app sh
-/code/ # python manage.py migrate
-/code/ # python manage.py runserver 0.0.0.0:8000
 /code/ # python manage.py createsuperuser
+```
+Nhập `Username`, `Email address` và `Password` cho **Superuser**
