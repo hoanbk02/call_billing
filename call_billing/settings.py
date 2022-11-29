@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,7 +69,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'call_billing.wsgi.application'
-
+GRAPPELLI_ADMIN_TITLE = 'Call Billing System'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
