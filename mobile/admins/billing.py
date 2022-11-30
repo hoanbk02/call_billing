@@ -4,6 +4,7 @@ from mobile.models import BillingManagement
 
 @admin.register(BillingManagement)
 class BillingManagementAdmin(admin.ModelAdmin):
+    search_fields = ('username',)
     list_display = ('user_id', 'username', 'call_count', 'block_count',)
     list_display_links = None
 
