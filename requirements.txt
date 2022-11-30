@@ -6,3 +6,5 @@ pytest==6.2.5
 pytest-django==4.4.0
 factory-boy==3.2.0
 pytest-mock==3.6.1
+django-admin-rangefilter==0.5.0
+django-database-view==0.3.0
